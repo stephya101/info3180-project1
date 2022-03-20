@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+
+
+{% block main %}
+<h2> View Properties</h2>
+
+<section id = "propertyInfo">
+  {% for property in propDetails %}
+  
+  <div class="card">
+    <img class="card-img-top" src="{{url_for('image', filename=property.photo)}}" alt="image"/>
+    <div class="card-body">
+      <h5 class="card-title">{{property.property_title}}</h5>
+      <span><img class="lotn img" src="{{url_for('static', filename='images/lotn.png')}}"/>{{property.location}}</span>
+      <div id="price"> {{property.price}} </div>
+    </div>
+      <a href= "{{url_for('property_id', propertyid = property.id)}}" class="btn btn-primary bg-black">View Property</a>
+  </div>
+
+    {% endfor %}
+</section>
+
+{% endblock %}

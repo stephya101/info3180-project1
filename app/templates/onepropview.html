@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block main %} 
+    
+	<div id="single">        	
+        <img class="img-top" src="{{url_for('image', filename=property.photo)}}" alt="image"/>
+        <div class = "details">
+	        <h4>{{property.property_title}}</h4>
+			<div id="row-parent">
+				<div id="price"> {{property.price}} </div>
+	        	<p class="type">{{property.property_type}}</p>
+			</div> 
+	        <p>{{property.description}}</p>
+
+	        <div id = "row-parent">
+				<span><img class="room" src="{{url_for('static', filename='images/bed.png')}}"/>{{property.no_of_rooms}} Bedroom</span>
+				<span><img class="bth" src="{{url_for('static', filename='images/shower.png')}}"/>{{property.no_of_bthrooms}} Bathroom</span>
+	       	</div>
+
+	        <div class = "more_details">
+	        	<p>{{property.location}}</p>
+	       	</div>
+			   <a href="{{url_for('property_id',propertyid=property.id)}}"></a><button class="btn btn-primary bg-dark">Email Realtor</button>
+
+        </div>
+    </div>    
+    
+    
+{% endblock %}
