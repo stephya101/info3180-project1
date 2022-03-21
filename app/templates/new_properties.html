@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-<form action="{{ url_for('static') }}"  method="POST" enctype="multipart/form-data" class="col-md-8">
+<form action="{{ url_for('new_properties') }}"  method="POST" enctype="multipart/form-data" class="col-md-8">
   {{ form1.csrf_token }}
   
   <div class = "form-group col-md-10">
